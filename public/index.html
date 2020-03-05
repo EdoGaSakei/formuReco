@@ -1,65 +1,158 @@
-<!DOCTYPE html>
+
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
-
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/7.9.3/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/7.9.3/firebase-auth.js"></script>
-    <script defer src="/__/firebase/7.9.3/firebase-database.js"></script>
-    <script defer src="/__/firebase/7.9.3/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/7.9.3/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
-
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
+     <title>Recomendaciones</title>
+     <meta charset="utf-8">
+     <meta name="description" content="Página de recomendacione">
+     <meta name="keywords" content ="HTML, CSS, JavaScript">
+     <link rel="stylesheet" href="estilos.css">
+     
   </head>
   <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
+     <header id="cabeceralogo">
+       <div>
+         <h1>¡Algunas Ideas!</h1>
+       </div> 
+     </header>
+     <nav id="menuprincipal">
+       <div>
+         </br><a><center>Sugerencias musicales y cinematográficas</center></a></br>
+     </nav>
+     <main>
+       <div>
+          <section id="articulosprincipales">
+            <article>
+              <h1>¡Cuentanos algo sobre ti!</h1>
+        <p>Somos una página que solo se dedica a entretener a nuestros visitantes, aquí te podremos recomendarte una canción o una pelicula con solamente responder unas preguntas.</p>
+              </br>
+        <form action ="javascript:valida();" id="form">
+              </br>
+        <select id="sexo" class="input">
+        <option value="">Sexo</option>
+        <option value="uno">Masculino</option>
+        <option value="dos">Femenino</option>
+        </select>
+        </br>
+          </br>
+        <select id="tipo" class="input">
+        <option value="">Música o Pelicula</option>
+        <option value="uno">Música</option>
+        <option value="dos">Pelicula</option>
+        </select>
+        </br>
+          </br>
+        <select id="color" class="input">
+        <option value="">Elija un color</option>
+        <option value="uno">Negro</option>
+        <option value="dos">Rojo</option>
+        <option value="tres">Rosa</option>
+        <option value="cuatro">Dorado</option>
+        </select>
+        </br>
+        <button type="submit" class="input">Confirmar</button>
+        </form>
+        <script>
+        function valida(){
+               var tip = document.getElementById("tipo");
+               var indiceSeleccionado = tip.selectedIndex;
+               var opcionSeleccionada = tip.options[indiceSeleccionado];
+               var tipo = opcionSeleccionada.value;
+               
+               var col = document.getElementById("color");
+               var indiceSeleccionado = col.selectedIndex;
+               var opcionSeleccionada = col.options[indiceSeleccionado];
+               var color = opcionSeleccionada.value;
+               
+               var sex = document.getElementById("sexo");
+               var indiceSeleccionado = sex.selectedIndex;
+               var opcionSeleccionada = sex.options[indiceSeleccionado];
+               var sexo = opcionSeleccionada.value;
+               
+               if(sexo === "uno"){
+          if (tipo === "uno" && color === "uno") {
+                   alert("Fear of the dark:Iron maiden");
+                }
+                else if(tipo === "uno" && color === "dos") {
+                   alert("Con calma:Daddy Yankee");
+                }
+                else if(tipo === "uno" && color === "tres") {
+                   alert("Girl next door:Drake Bell");
+                }
+                else if(tipo === "uno" && color === "cuatro") {
+                   alert("Lazy song:Bruno Mars");
+                }
+                else if(tipo === "dos" && color === "uno") {
+                   alert("Get rich or die tryin");
+                }
+                else if(tipo === "dos" && color === "dos") {
+                   alert("Crazy, Stupid Love");
+                }
+                else if(tipo === "dos" && color === "tres") {
+                   alert("500 days of summer");
+                }
+                else if(tipo === "dos" && color === "cuatro") {
+                   alert("Shottas 'hermanos en el crimen'");
+                }
+                else {
+                  alert("Opcion no existente");
+                }
+                }
+                else if(sexo === "dos"){
+                
+                if (tipo === "uno" && color === "uno") {
+                   alert("Complicated:Abril Lavigne");
+                }
+                else if(tipo === "uno" && color === "dos") {
+                   alert("Corre:Jesse y Joy");
+                }
+                else if(tipo === "uno" && color === "tres") {
+                   alert("Mundo de caramelo:Danna Paola");
+                }
+                else if(tipo === "uno" && color === "cuatro") {
+                   alert("Single ladies:Beyoncé");
+                }
+                else if(tipo === "dos" && color === "uno") {
+                   alert("Chicas Pesadas");
+                }
+                else if(tipo === "dos" && color === "dos") {
+                   alert("Triunfos Robados");
+                }
+                else if(tipo === "dos" && color === "tres") {
+                   alert("Bajo la misma estrella");
+                }
+                else if(tipo === "dos" && color === "cuatro") {
+                   alert("Rapunzel");
+                }
+                else {
+                  alert("Opcion no existente");
+                }
+                
+                }
+                else{
+                  alert("Debes seleccionar tu sexo");
+                }
+              }
+        </script>
+            </article>
+      </section>
+      <aside id="infoadicional">
+         <h2>Canserbero</h2></br>
+         <a>Lo conoces, entonces no hay nada mejor que pueda recomendarte, ya eres un conocedor de buena música.</a></br>
+         </br><img src="https://www.elsiglodetorreon.com.mx/m/i/2020/01/1270739.jpeg" height="170">
+         <h1></br></br><center>Redes Sociales</center></h1>
+         <center><p><a href="https://www.facebook.com/Edgar0397"><img src="https://image.flaticon.com/icons/png/512/25/25305.png" height="50" ></a></p></center>
+         <center><p><br><a href="https://twitter.com/EdgarOr13757518"><img src="http://pngimg.com/uploads/twitter/twitter_PNG8.png" height="50"></a></p></center>
+         <center><p><br><a href="https://www.instagram.com/ortedgar22/?hl=es-la"><img src="https://cdn.icon-icons.com/icons2/2037/PNG/512/ig_instagram_media_social_icon_124260.png" height="50"></a></p></center>
+      </aside>
+      </div>
+    </main>
+    <footer id="pielogo">
+      <div>
+      <section class="seccionpie">
+        <address>Nezahualcóyotl, Estado de México</address>
+        <small>&copy; Derechos Reservados, 2020 Julio Edgar Ortega Astudillo</small>
+      </section>
+      </div>
+    </footer>
   </body>
-</html>
+  </html>
